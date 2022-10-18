@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Caveat:wght@500&family=Courgette&display=swap');
+body{
+    text-align:center;
+    background-color: #1B2430;
+}
+
+.container{
+    background:#f1f3f5;  /*Open Color*/
+    width:400px;
+    padding: 35px;
+    margin: 0px auto 50px;
+    border-radius: 10px;
+    box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
+}
+
+h1{
+    /* text-align:center; */
+    font-family: 'Bungee Spice', cursive;
+    font-size: 6rem;
+}
+
+img{
+    padding-bottom: 5rem;
+    width:15%;
+}
+
+.coin{
+    height: 150px;
+    width: 150px;
+    position:relative;
+    margin : 32px auto;
+    transform-style: preserve-3d;
+}
+.coin img{
+    width:100%;
+}
+.heads, .tails{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.tails{
+    transform: rotateX(180deg);
+}
+
+/* Now adding flip animation */
+@keyframes spin-tails {
+    0%{
+        transform: rotateX(0);  /*RotateX help to rotate this coin according to x axis */
+    }
+
+    100%{
+        transform: rotateX(1980deg); /* 1980+180=2160deg */ 
+    }
+}
+
+@keyframes spin-heads {
+    0%{
+        transform: rotateX(0);  /*RotateX help to rotate this coin according to x axis */
+    }
+
+    100%{
+        transform: rotateX(2160deg);
+    }
+}
+
+.stats{
+    display: flex;
+    color:#101020;
+    font-size: 1.75rem;
+    font-weight:bolder;
+    font-family: 'Caveat', cursive;
+    padding: 10px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(0,139,253,0.25);
+}
+
+.stats p:nth-last-child(1){
+    margin-left: 50%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    width:150px;
+    padding: 15px 0;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+#flip-button{
+    background: #053469;
+    color: white;
+}
+#flip-button:disabled{
+    background: #e1e0ee;
+    border-color: #e1e0ee;
+    color : #101020;
+}
+#reset-button{
+    background: #674706;
+    color: white;
+}
+
+button:hover{
+    background-color: #D49B54;
+}
+
+.address{
+    color:#fff;
+    font-size: 1.75rem;
+    font-family: 'Caveat', cursive;
+}
+
+@media(max-width:500px){
+    h1{
+        font-size: 4rem;
+    }
+    .container{
+        background:#fff;
+        width:150px;
+        padding: 35px;
+        margin: 0px auto 50px;
+        border-radius: 10px;
+        box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
+    }
+    button{
+        width:100px;
+        padding: 15px 0;
+        border: none;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor:pointer;
+    }
+    .stats{
+        display: flex;
+        color:#101020;
+        font-size: 1rem;
+        font-weight:bolder;
+        font-family: 'Caveat', cursive;
+        /* padding: 10px; */
+        margin-top: 5px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 20px rgba(0,139,253,0.25);
+    }
+    .coin{
+        height: 150px;
+        width: 150px;
+        position:relative;
+        margin : 10px auto;
+        transform-style: preserve-3d;
+    }
+    .coin img{
+        width:70%;
+        padding-bottom: 15px;
+    }
+    button{
+        width:70px;
+        padding: 10px 0;
+        border: none;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor:pointer;
+    }
+    .address{
+        font-size: 1.25rem;
+    }
+    
+}
+
